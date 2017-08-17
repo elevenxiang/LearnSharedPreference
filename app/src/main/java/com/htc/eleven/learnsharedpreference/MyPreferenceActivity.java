@@ -46,19 +46,26 @@ public class MyPreferenceActivity extends PreferenceFragment implements Preferen
         switch (preference.getKey()) {
             case "wireless_network":
                 CheckBoxPreference cb = (CheckBoxPreference) preference;
-                boolean result = !cb.isChecked();
-                Toast.makeText(getContext(), cb.getSummary().toString()+ ": " + result, Toast.LENGTH_SHORT).show();
+
+                // Object o will return the modified result.
+                Toast.makeText(getContext(), cb.getSummary().toString()+ ": " + String.valueOf(o), Toast.LENGTH_SHORT).show();
                 break;
 
             case "list":
                 ListPreference list = (ListPreference) preference;
                 list.setSummary(list.getEntry() + " : " + list.getValue());
-                Toast.makeText(getContext(), list.getEntry() + " : " + list.getValue(), Toast.LENGTH_SHORT).show();
+
+                // Object o will return the modified result.
+//                Toast.makeText(getContext(), list.getEntry() + " : " + list.getValue(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), String.valueOf(o), Toast.LENGTH_SHORT).show();
                 break;
 
             case "myname":
                 EditTextPreference edit = (EditTextPreference) preference;
-                Toast.makeText(getContext(), edit.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), edit.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+
+                // Object o will return the modified result.
+                Toast.makeText(getContext(), String.valueOf(o), Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
